@@ -19,8 +19,6 @@ import stopwatch from '../assets/stopwatch.svg';
 import archive from '../assets/archive.svg';
 import importIcon from '../assets/import.svg';
 import exportIcon from '../assets/export.svg';
-import resizeLeft from '../assets/arrow-left.svg?url';
-import resizeRight from '../assets/arrow-right.svg?url';
 
 import ToggleButton from '../UI/ToggleButton';
 import { dataActions } from '../store/data-slice';
@@ -62,7 +60,7 @@ const StyledHeader = styled.header`
     height: 100%;
     width: 12px;
     background: transparent;
-    cursor: url(${resizeLeft}), auto;
+    cursor: url(${import.meta.env.BASE_URL + 'arrow-left.svg'}), auto;
 
     &::before {
       content: '';
@@ -176,7 +174,7 @@ const StyledHeader = styled.header`
     }
 
     .edge {
-      cursor: url(${resizeRight}), auto;
+      cursor: url(${import.meta.env.BASE_URL + 'arrow-right.svg'}), auto;
     }
   }
 `;
