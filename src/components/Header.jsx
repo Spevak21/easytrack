@@ -17,10 +17,10 @@ import house from '../assets/house.svg';
 import folder from '../assets/folder.svg';
 import stopwatch from '../assets/stopwatch.svg';
 import archive from '../assets/archive.svg';
-import resizeLeft from '../assets/arrow-left.svg';
-import resizeRight from '../assets/arrow-right.svg';
 import importIcon from '../assets/import.svg';
 import exportIcon from '../assets/export.svg';
+import resizeLeft from '../assets/arrow-left.svg?url';
+import resizeRight from '../assets/arrow-right.svg?url';
 
 import ToggleButton from '../UI/ToggleButton';
 import { dataActions } from '../store/data-slice';
