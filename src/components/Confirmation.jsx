@@ -12,7 +12,7 @@ import {
   discardTaskThunk,
   removeTaskThunk,
   restoreTaskThunk,
-} from '../store/project-actions';
+} from '../store/projects-actions';
 import { resetModal } from '../store/data-actions';
 
 import { colors } from '../util/variables';

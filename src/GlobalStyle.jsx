@@ -2,8 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 import { colors, opacity, shadows } from './util/variables';
 
-import bgLogo from './assets/background-logo.svg';
-
 const GlobalStyle = createGlobalStyle`
   /* https://meyerweb.com/eric/tools/css/reset/ */
   html, body, div, span, applet, object, iframe,
@@ -80,7 +78,7 @@ const GlobalStyle = createGlobalStyle`
       height: 90%;
       aspect-ratio: 1/1;
       transform: translate(-50%, -50%);
-      background-image: url(${bgLogo});
+      background-image: url(${import.meta.env.BASE_URL + 'background-logo.svg'});
       background-size: contain;
       background-repeat: no-repeat;
       pointer-events: none;

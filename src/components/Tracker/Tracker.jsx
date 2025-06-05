@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { dataActions } from '../../store/data-slice';
 import { pauseTracking, resumeTracking } from '../../store/data-actions';
-import { addTrackLog } from '../../store/project-actions';
+import { addTrackLog } from '../../store/projects-actions';
 
 import { colors, opacity, shadows } from '../../util/variables';
 import {

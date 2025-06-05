@@ -12,12 +12,11 @@ import { projectsActions } from './projects-slice';
 import { uiActions } from './ui-slice';
 
 export const initData = () => {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     const data = getLocalStorageItem('trackerData');
 
     if (data === null) {
-      const currentState = getState();
-      setLocalStorageData('trackerData', currentState.projects)
+      setLocalStorageData('trackerData', []);
     } else {
       dispatch(projectsActions.setProjects(data));
 

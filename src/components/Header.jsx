@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { uiActions } from '../store/ui-slice';
-import { exportData, importData } from '../store/project-actions';
+import { exportData, importData } from '../store/projects-actions';
 
 import { colors, opacity, shadows } from '../util/variables';
 import {

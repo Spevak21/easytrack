@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { initData, setLocalStorageData, addTrackLog } from './store/project-actions';
+import { initData, setLocalStorageData, addTrackLog } from './store/projects-actions';
 import { initUI } from './store/ui-actions';
 
 import { getCurrentTimestamp } from './util/helpers';

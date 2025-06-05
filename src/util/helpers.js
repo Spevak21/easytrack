@@ -10,7 +10,7 @@ export const getLocalStorageItem = (name) => {
   if (item) {
     return JSON.parse(item);
   } else {
-    console.warn('Custom error: Could not find the item in localStorage.');
+    console.warn(`Warning: Could not find the item (${name}) in localStorage.`);
     return null;
   }
 };

@@ -8,7 +8,7 @@ import {
   editProjectThunk,
   addTaskThunk,
   editTaskThunk,
-} from '../../store/project-actions';
+} from '../../store/projects-actions';
 import { resetModal } from '../../store/data-actions';
 import { uiActions } from '../../store/ui-slice';
 
