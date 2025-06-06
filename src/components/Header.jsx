@@ -15,7 +15,6 @@ import logoFull from '../assets/logo-full.svg';
 import logoSymbol from '../assets/logo-symbol.svg';
 import house from '../assets/house.svg';
 import folder from '../assets/folder.svg';
-import stopwatch from '../assets/stopwatch.svg';
 import archive from '../assets/archive.svg';
 import importIcon from '../assets/import.svg';
 import exportIcon from '../assets/export.svg';
@@ -266,7 +265,7 @@ function Header() {
               className={page === 'trackers' ? 'active' : ''}
               onClick={() => handleChangePage('trackers')}
             >
-              <img src={stopwatch} alt="Stopwatch icon" />
+              <img src={import.meta.env.BASE_URL + 'stopwatch.svg'} alt="Stopwatch icon" />
               {!isMinimized && 'Trackers'}
             </li>
           )}

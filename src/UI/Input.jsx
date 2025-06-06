@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { colors, opacity, shadows } from '../util/variables';
+import PropTypes from 'prop-types';
 
-import Calendar from '../assets/calendar.svg';
+import { colors, opacity, shadows } from '../util/variables';
 
 const StyledInput = styled.input`
   position: relative;
@@ -50,7 +50,7 @@ const StyledInput = styled.input`
       height: 1.6rem;
       width: 1.6rem;
       transform: translateY(50%);
-      background-image: url(${Calendar});
+      background-image: url(${({ $validValue }) => (import.meta.env.BASE_URL + ($validValue ? 'calendar-checked.svg' : 'calendar.svg'))});
       background-size: contain;
       background-repeat: no-repeat;
       pointer-events: none;
@@ -63,7 +63,13 @@ const StyledInput = styled.input`
 `;
 
 function Input(props) {
-  return <StyledInput {...props} />;
+  
+  return <StyledInput {...props} $validValue={props.type === "datetime-local" && props.value} />;
 }
+
+Input.propTypes = {
+  type: PropTypes.string,
+  value: PropTypes.string,
+};
 
 export default Input;

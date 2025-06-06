@@ -19,7 +19,6 @@ import Pencil from '../../assets/pencil.svg';
 import FilePlus from '../../assets/file-plus.svg';
 import CheckCircle from '../../assets/check-circle.svg';
 import Ban from '../../assets/ban.svg';
-import Stopwatch from '../../assets/stopwatch.svg';
 
 import TaskItem from '../Task/TaskItem';
 import Time from '../widgets/Time';
@@ -39,7 +38,7 @@ const StyledCard = styled.li`
     right: 12rem;
     height: 10rem;
     aspect-ratio: 1/1;
-    background-image: url(${Stopwatch});
+    background-image: url(${import.meta.env.BASE_URL + 'stopwatch.svg'});
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;

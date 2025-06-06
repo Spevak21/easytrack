@@ -13,7 +13,6 @@ import CheckCircle from '../../assets/check-circle.svg';
 import Ban from '../../assets/ban.svg';
 import Undo from '../../assets/undo.svg';
 import Trash from '../../assets/trash.svg';
-import Stopwatch from '../../assets/stopwatch.svg';
 
 import Time from '../widgets/Time';
 import Button from '../../UI/Button';
@@ -150,7 +149,7 @@ function TaskDetails({ onClose }) {
               {isTracked ? (
                 <img
                   className="icon"
-                  src={Stopwatch}
+                  src={import.meta.env.BASE_URL + 'stopwatch.svg'}
                   alt="Stopwatch icon"
                   onClick={displayTrackers}
                 />

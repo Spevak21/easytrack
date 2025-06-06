@@ -16,7 +16,6 @@ import {
 } from '../../../util/helpers';
 
 import Gear from '../../../assets/gear.svg';
-import Chevron from '../../../assets/chevron-bold.svg';
 
 import Time from '../../widgets/Time';
 import Row from './Row';
@@ -312,7 +311,7 @@ function Timeline({ className }) {
       <div className="column-left">
         <div className="options">
           <img
-            src={Chevron}
+            src={import.meta.env.BASE_URL + 'chevron-bold.svg'}
             alt="Arrow left icon"
             className="prev"
             onClick={handlePreviousWeek}
@@ -323,7 +322,7 @@ function Timeline({ className }) {
             onClick={handleTimelineModal}
           />
           <img
-            src={Chevron}
+            src={import.meta.env.BASE_URL + 'chevron-bold.svg'}
             alt="Arrow right icon"
             className="next"
             onClick={handleNextWeek}

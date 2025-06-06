@@ -13,7 +13,6 @@ import CheckCircle from '../../assets/check-circle.svg';
 import Ban from '../../assets/ban.svg';
 import Undo from '../../assets/undo.svg';
 import Trash from '../../assets/trash.svg';
-import Stopwatch from '../../assets/stopwatch.svg';
 import PlayCircle from '../../assets/play-circle.svg';
 
 import Time from '../widgets/Time';
@@ -63,7 +62,7 @@ const StyledTaskItem = styled.li`
     height: 80%;
     aspect-ratio: 1/1;
     transform: translateY(-50%);
-    background-image: url(${Stopwatch});
+    background-image: url(${import.meta.env.BASE_URL + 'stopwatch.svg'});
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
@@ -238,7 +237,7 @@ function TaskItem({ archived = false, task, index }) {
           (isTracked ? (
             <img
               className="icon"
-              src={Stopwatch}
+              src={import.meta.env.BASE_URL + 'stopwatch.svg'}
               alt="Stopwatch icon"
               onClick={displayTrackers}
             />

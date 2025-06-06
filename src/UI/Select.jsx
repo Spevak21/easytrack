@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import { colors, opacity, shadows } from '../util/variables';
 import { generateID } from '../util/helpers';
 
-import ChevronBold from '../assets/chevron-bold.svg';
-
 const StyledSelect = styled.div`
   position: relative;
 
@@ -29,7 +27,7 @@ const StyledSelect = styled.div`
       right: 0.8rem;
       height: 1.6rem;
       width: 1.6rem;
-      background-image: url(${ChevronBold});
+      background-image: url(${import.meta.env.BASE_URL + 'chevron-bold.svg'});
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
