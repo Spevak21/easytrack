@@ -107,6 +107,12 @@ const StyledSelect = styled.div`
     }
   }
 
+  @supports (-webkit-hyphens: none) and (not (overflow: -webkit-marquee)) {
+    .body {
+      background-color: ${'#213C68' + opacity[75]};
+    }
+  }
+
   &:hover,
   &:focus-visible,
   &:focus-within {
