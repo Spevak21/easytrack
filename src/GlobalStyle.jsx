@@ -147,7 +147,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .box {
-    /* Using pseudo element for background blur, otherwise nested elements would not be to use blur as well */
+    /* Using pseudo element for background blur, otherwise nested elements would not be able to use blur as well */
     position: relative;
     border-radius: .8rem;
     background: radial-gradient(
@@ -166,6 +166,14 @@ const GlobalStyle = createGlobalStyle`
       box-shadow: ${shadows.cardShadowSharp}, ${shadows.cardShadowSoft};
       backdrop-filter: blur(20px);
       z-index: -1;
+    }
+  }
+
+  @supports (-webkit-hyphens: none) and (not (overflow: -webkit-marquee)) {
+    .box::before {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background-color: ${colors.blue2 + opacity[75]} !important;
     }
   }
 

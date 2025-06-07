@@ -56,17 +56,23 @@ const StyledDashboard = styled.section`
         }
       }
     }
+
     @container dashboard (max-width: 1024px) {
       overflow-x: auto;
     }
 
     @container dashboard (max-width: 979px) {
       .first-row .item {
+        &-1 {
+          height: 41.6rem;
+        }
+        
         &-2 {
           height: 30rem;
         }
       }
     }
+
     @container dashboard (max-width: 664px) {
       .first-row .item {
         height: fit-content;

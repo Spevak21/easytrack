@@ -7,9 +7,10 @@ const StyledBarChart = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  height: 20rem;
+  flex-grow: 1;
+  max-height: 20rem;
   width: 20rem;
-  min-width: 20rem;
+  max-width: 20rem;
 
   p {
     width: 100%;
