@@ -53,7 +53,7 @@ const StyledNotificationCard = styled.div`
   }}
 
   @supports (-webkit-hyphens: none) and (not (overflow: -webkit-marquee)) {
-    background-color: ${colors.blue2 + opacity[75]} !important;
+    background-color: ${colors.blue2 + opacity[90]} !important;
   }
 
   @starting-style {
