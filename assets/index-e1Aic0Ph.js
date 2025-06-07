@@ -195,7 +195,7 @@ ${Oo(o.deadline-G())}`,duration:1e4,state:"warning"}))},s*200)})}},b5=e=>()=>{Tn
   }
 
   .box {
-    /* Using pseudo element for background blur, otherwise nested elements would not be to use blur as well */
+    /* Using pseudo element for background blur, otherwise nested elements would not be able to use blur as well */
     position: relative;
     border-radius: .8rem;
     background: radial-gradient(
@@ -214,6 +214,14 @@ ${Oo(o.deadline-G())}`,duration:1e4,state:"warning"}))},s*200)})}},b5=e=>()=>{Tn
       box-shadow: ${O.cardShadowSharp}, ${O.cardShadowSoft};
       backdrop-filter: blur(20px);
       z-index: -1;
+    }
+  }
+
+  @supports (-webkit-hyphens: none) and (not (overflow: -webkit-marquee)) {
+    .box::before {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background-color: ${m.blue2+S[75]} !important;
     }
   }
 
@@ -424,6 +432,10 @@ ${Oo(o.deadline-G())}`,duration:1e4,state:"warning"}))},s*200)})}},b5=e=>()=>{Tn
 
   ${({$exitAnimate:e})=>{if(e)return`opacity: 0;
       transform: translateX(100%);`}}
+
+  @supports (-webkit-hyphens: none) and (not (overflow: -webkit-marquee)) {
+    background-color: ${m.blue2+S[75]} !important;
+  }
 
   @starting-style {
     opacity: 0;
@@ -1618,9 +1630,10 @@ ${Oo(o.deadline-G())}`,duration:1e4,state:"warning"}))},s*200)})}},b5=e=>()=>{Tn
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  height: 20rem;
+  flex-grow: 1;
+  max-height: 20rem;
   width: 20rem;
-  min-width: 20rem;
+  max-width: 20rem;
 
   p {
     width: 100%;
@@ -2051,17 +2064,23 @@ ${Oo(o.deadline-G())}`,duration:1e4,state:"warning"}))},s*200)})}},b5=e=>()=>{Tn
         }
       }
     }
+
     @container dashboard (max-width: 1024px) {
       overflow-x: auto;
     }
 
     @container dashboard (max-width: 979px) {
       .first-row .item {
+        &-1 {
+          height: 41.6rem;
+        }
+        
         &-2 {
           height: 30rem;
         }
       }
     }
+
     @container dashboard (max-width: 664px) {
       .first-row .item {
         height: fit-content;
