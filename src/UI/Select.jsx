@@ -94,10 +94,14 @@ const StyledSelect = styled.div`
         padding: 0.4rem 0.8rem;
         font-size: 1.6rem;
         cursor: pointer;
+        transition: background-color 0.25s ease-out;
 
-        &:hover,
+        &:hover {
+          background-color: ${colors.white + opacity[3]};
+        }
+
         &.selected {
-          background-color: ${colors.white + opacity[5]};
+          background-color: ${colors.blue5 + opacity[20]};
         }
       }
     }
