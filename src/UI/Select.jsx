@@ -109,7 +109,7 @@ const StyledSelect = styled.div`
 
   @supports (-webkit-hyphens: none) and (not (overflow: -webkit-marquee)) {
     .body {
-      background-color: ${'#213C68' + opacity[75]};
+      background-color: #14305F;
     }
   }
 
