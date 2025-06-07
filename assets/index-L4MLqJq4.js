@@ -434,7 +434,7 @@ ${Oo(o.deadline-G())}`,duration:1e4,state:"warning"}))},s*200)})}},b5=e=>()=>{Tn
       transform: translateX(100%);`}}
 
   @supports (-webkit-hyphens: none) and (not (overflow: -webkit-marquee)) {
-    background-color: ${m.blue2+S[75]} !important;
+    background-color: ${m.blue2+S[90]} !important;
   }
 
   @starting-style {
