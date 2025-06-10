@@ -1,0 +1,543 @@
+[
+  {
+    "name": "Test project 3",
+    "priority": "low",
+    "description": "Another finished projects",
+    "id": "2fe4c361-3e51-41d5-8ef5-4295ad48c482",
+    "dateCreated": 1749550198791,
+    "status": "finished",
+    "tasks": [
+      {
+        "projectId": "2fe4c361-3e51-41d5-8ef5-4295ad48c482",
+        "name": "Task 2",
+        "priority": "low",
+        "description": "Task description",
+        "id": "4e685f7f-2dbd-4b67-84f2-84287a29f755",
+        "dateCreated": 1749550385874,
+        "time": 0,
+        "status": "discarded",
+        "trackLogs": [],
+        "dateDiscarded": 1749550390795
+      },
+      {
+        "projectId": "2fe4c361-3e51-41d5-8ef5-4295ad48c482",
+        "name": "Task 1",
+        "priority": "low",
+        "description": "Task description",
+        "id": "1da36d63-698c-4055-bf90-1f05dbe14730",
+        "dateCreated": 1749550381754,
+        "time": 0,
+        "status": "finished",
+        "trackLogs": [],
+        "dateFinished": 1749550396491
+      }
+    ],
+    "dateFinished": 1749550396491
+  },
+  {
+    "name": "Test project 2",
+    "priority": "low",
+    "description": "Finished project",
+    "id": "b6d37fcc-94ff-40bf-afb1-f8bad889e7fc",
+    "dateCreated": 1749550185197,
+    "status": "finished",
+    "tasks": [
+      {
+        "projectId": "b6d37fcc-94ff-40bf-afb1-f8bad889e7fc",
+        "name": "Task 3",
+        "priority": "low",
+        "description": "Task description",
+        "id": "4b86afc7-104a-4983-bcc1-63529a3e3734",
+        "dateCreated": 1749550234754,
+        "time": 0,
+        "status": "finished",
+        "trackLogs": [],
+        "dateFinished": 1749550353693
+      },
+      {
+        "projectId": "b6d37fcc-94ff-40bf-afb1-f8bad889e7fc",
+        "name": "Task 2",
+        "priority": "low",
+        "description": "Task description",
+        "id": "b7bb651f-b6e3-4d7e-a552-3649e0bd0686",
+        "dateCreated": 1749550229555,
+        "time": 0,
+        "status": "finished",
+        "trackLogs": [],
+        "dateFinished": 1749550353693
+      },
+      {
+        "projectId": "b6d37fcc-94ff-40bf-afb1-f8bad889e7fc",
+        "name": "Task 1",
+        "priority": "low",
+        "description": "Task description",
+        "id": "90a4d708-35dd-4a38-babe-015d72a17010",
+        "dateCreated": 1749550223387,
+        "time": 0,
+        "status": "finished",
+        "trackLogs": [],
+        "dateFinished": 1749550353693
+      }
+    ],
+    "dateFinished": 1749550353693
+  },
+  {
+    "name": "Test project 1",
+    "priority": "low",
+    "description": "Discarded project",
+    "id": "4c6cd85a-88e5-4c4f-b8ca-fd3fe34a8dc0",
+    "dateCreated": 1749550164253,
+    "status": "discarded",
+    "tasks": [],
+    "dateDiscarded": 1749550170317
+  },
+  {
+    "name": "Project with parallel tracking",
+    "description": "A project with multiple task tracking that were running simultaneously and overlapping in the timeline on the dashboard page.",
+    "id": "c08bd5cb-0442-45d5-97f6-bee05d73c59e",
+    "dateCreated": 1747849935925,
+    "status": "active",
+    "priority": "low",
+    "tasks": [
+      {
+        "projectId": "c08bd5cb-0442-45d5-97f6-bee05d73c59e",
+        "name": "Parallel 3",
+        "description": "Parallel 3 text",
+        "id": "f5d06b9d-e72f-438f-90d4-a47afb9b991b",
+        "dateCreated": 1747849977178,
+        "time": 20715000,
+        "status": "active",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1747853544374,
+            "end": 1747867129795,
+            "time": 13582000
+          },
+          {
+            "start": 1748007910681,
+            "end": 1748015046741,
+            "time": 7133000
+          }
+        ]
+      },
+      {
+        "projectId": "c08bd5cb-0442-45d5-97f6-bee05d73c59e",
+        "name": "Parallel 2",
+        "description": "Parallel 2 text",
+        "id": "0369734f-7b7e-431f-9c40-11682402d7cc",
+        "dateCreated": 1747849963320,
+        "time": 21438000,
+        "status": "active",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1747850989084,
+            "end": 1747867128311,
+            "time": 16136000
+          },
+          {
+            "start": 1747909821888,
+            "end": 1747915126237,
+            "time": 5302000
+          }
+        ]
+      },
+      {
+        "projectId": "c08bd5cb-0442-45d5-97f6-bee05d73c59e",
+        "name": "Parallel 1",
+        "description": "Parallel 1 text",
+        "id": "27115e0e-3efa-4ce0-be66-349702f472a7",
+        "dateCreated": 1747849953487,
+        "time": 26858000,
+        "status": "active",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1747849990419,
+            "end": 1747867126887,
+            "time": 17134000
+          },
+          {
+            "start": 1747909018444,
+            "end": 1747910329023,
+            "time": 1308000
+          },
+          {
+            "start": 1747913678865,
+            "end": 1747917580316,
+            "time": 3899000
+          },
+          {
+            "start": 1748005246842,
+            "end": 1748009766498,
+            "time": 4517000
+          }
+        ]
+      }
+    ],
+    "dateModified": 1749550126623
+  },
+  {
+    "id": "ddb40214-7912-4232-90db-8210055a2e0d",
+    "name": "Learn React",
+    "description": "Learn all bits and pieces of React in order to make great portfolio and land a job.",
+    "dateCreated": 1735714800000,
+    "deadline": 1767193200000,
+    "status": "active",
+    "priority": "high",
+    "tasks": [
+      {
+        "id": "4427ffdd-92e6-49e4-94dd-ff4217a3fa3c",
+        "projectId": "ddb40214-7912-4232-90db-8210055a2e0d",
+        "name": "React essentials",
+        "description": "React components, JSX, props, state, event handling, conditional rendering",
+        "dateCreated": 1735715604000,
+        "dateFinished": 1735733783000,
+        "deadline": 1735743600000,
+        "time": 15270000,
+        "status": "finished",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1735715864000,
+            "end": 1735733591000,
+            "time": 15270000
+          }
+        ]
+      },
+      {
+        "id": "361b2574-42e4-4e1d-8e1b-ab2d4988c6a0",
+        "projectId": "ddb40214-7912-4232-90db-8210055a2e0d",
+        "name": "React essentials 2",
+        "description": "React fragment, splitting components, forwarding props, multiple JSX slots, setting component types dynamically, default prop, updating state based on old state, two-way binding, lifting state up",
+        "dateCreated": 1735735583000,
+        "dateFinished": 1735814582000,
+        "deadline": 1735830000000,
+        "time": 19778000,
+        "status": "finished",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1735736035000,
+            "end": 1735744192000,
+            "time": 7669000
+          },
+          {
+            "start": 1735801602000,
+            "end": 1735814452000,
+            "time": 12109000
+          }
+        ]
+      },
+      {
+        "id": "24eface9-e708-4f59-904f-15acf49941c7",
+        "projectId": "ddb40214-7912-4232-90db-8210055a2e0d",
+        "name": "Practicing React basics",
+        "description": "Creating Investment calculator",
+        "dateCreated": 1735816130000,
+        "dateFinished": 1735898215000,
+        "deadline": 1735916400000,
+        "time": 22440000,
+        "status": "finished",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1735816497000,
+            "end": 1735830388000,
+            "time": 12640000
+          },
+          {
+            "start": 1735887732000,
+            "end": 1735897964000,
+            "time": 9800000
+          }
+        ]
+      },
+      {
+        "id": "d4caf183-2547-46e3-9d3b-42dbcec8d209",
+        "projectId": "ddb40214-7912-4232-90db-8210055a2e0d",
+        "name": "Styled components",
+        "description": "Learning styled components, dynamic and conditional styling, nested rules",
+        "dateCreated": 1735900214000,
+        "dateFinished": 1735908742000,
+        "deadline": 1735916400000,
+        "time": 7857000,
+        "status": "finished",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1735900449000,
+            "end": 1735908670000,
+            "time": 7857000
+          }
+        ]
+      },
+      {
+        "id": "d43ff8d8-b2e4-4bba-8e1a-ecc8b4e63bd2",
+        "projectId": "ddb40214-7912-4232-90db-8210055a2e0d",
+        "name": "Debugging",
+        "description": "Understanding React error messages, Browser debugger and breakpoints, understanding strict mode in react, React DevTools",
+        "dateCreated": 1735909217000,
+        "dateFinished": 1735912072000,
+        "deadline": 1735916400000,
+        "time": 2536000,
+        "status": "finished",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1735909349000,
+            "end": 1735911885000,
+            "time": 2536000
+          }
+        ]
+      },
+      {
+        "id": "0357b2eb-4500-417c-987d-bb75d58db27b",
+        "projectId": "ddb40214-7912-4232-90db-8210055a2e0d",
+        "name": "Refs and portals",
+        "description": "Connecting and accessing HTML elements via Refs, Refs vs State values, persisting values between component re-rendering, forwarding refs, useImperativeHandle, createPortal",
+        "dateCreated": 1735912795000,
+        "dateDiscarded": 1736153095000,
+        "deadline": 1736175600000,
+        "time": 9378000,
+        "status": "discarded",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1735912983000,
+            "end": 1735916485000,
+            "time": 3502000
+          },
+          {
+            "start": 1736146886000,
+            "end": 1736152762000,
+            "time": 5876000
+          }
+        ]
+      },
+      {
+        "id": "6d3a7514-6e24-410d-83a1-e428604ea040",
+        "projectId": "ddb40214-7912-4232-90db-8210055a2e0d",
+        "name": "Practicing React",
+        "description": "Creating Management App",
+        "dateCreated": 1736153783000,
+        "dateFinished": 1736243230000,
+        "deadline": 1736348400000,
+        "time": 27490000,
+        "status": "finished",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1736154025000,
+            "end": 1736175621000,
+            "time": 18656000
+          },
+          {
+            "start": 1736233272000,
+            "end": 1736243064000,
+            "time": 8834000
+          }
+        ]
+      },
+      {
+        "id": "5959da5d-6b65-4f8d-8262-f786e3ae6c4b",
+        "projectId": "ddb40214-7912-4232-90db-8210055a2e0d",
+        "name": "React's Context API & useReducer - Advanced State Management",
+        "description": "Prop drilling, component composition, Context API, creating & providing context, consuming the context, outsourcing context & state into a separate provider component, useReducer, dispatching actions",
+        "dateCreated": 1736243555000,
+        "deadline": 1736262000000,
+        "time": 5748000,
+        "status": "active",
+        "priority": "medium",
+        "trackLogs": [
+          {
+            "start": 1736243768000,
+            "end": 1736249516000,
+            "time": 5748000
+          }
+        ]
+      },
+      {
+        "id": "d26dd7a2-d1d2-4878-a16d-b24a6cc8aa66",
+        "projectId": "ddb40214-7912-4232-90db-8210055a2e0d",
+        "name": "Handling Side Effects & Working with the useEffect() Hook",
+        "description": "Side effect, useEffect, effect dependencies, cleanup function, object and function dependencies, useCallback",
+        "dateCreated": 1736250488000,
+        "deadline": 1736262000000,
+        "time": 7944000,
+        "status": "active",
+        "priority": "high",
+        "trackLogs": [
+          {
+            "start": 1736250877000,
+            "end": 1736259361000,
+            "time": 7944000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2f62bbcf-da6c-406b-9e7e-3b296c15df43",
+    "name": "Get healthier",
+    "description": "Workout cardio and strength exercises to get in better shape and feel better in the long run.",
+    "dateCreated": 1735974672000,
+    "status": "active",
+    "priority": "medium",
+    "tasks": [
+      {
+        "id": "0bd6c459-f630-4944-88da-8079059c3134",
+        "projectId": "2f62bbcf-da6c-406b-9e7e-3b296c15df43",
+        "name": "Monday: Legs & Glutes",
+        "description": "Squats (Barbell or Dumbbell) – 4 sets x 8-12 reps\nDeadlifts (Romanian or Conventional) – 3 sets x 6-10 reps\nLunges – 3 sets x 12-15 reps per leg\nGlute Bridges or Hip Thrusts – 4 sets x 10-12 reps\nLeg Press – 3 sets x 10-12 reps\nCalf Raises – 4 sets x 15-20 reps",
+        "dateCreated": 1735975447000,
+        "time": 2205000,
+        "status": "active",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1736186444000,
+            "end": 1736188649000,
+            "time": 2205000
+          }
+        ]
+      },
+      {
+        "id": "5952b5ea-3b84-4dd5-a35b-5a29362a7e9a",
+        "projectId": "2f62bbcf-da6c-406b-9e7e-3b296c15df43",
+        "name": "Tuesday: Chest & Triceps",
+        "description": "Bench Press (Barbell or Dumbbell) – 4 sets x 8-12 reps\nIncline Dumbbell Press – 3 sets x 8-12 reps\nChest Flys (Machine or Dumbbell) – 3 sets x 10-15 reps\nDips (Weighted if possible) – 3 sets x 8-12 reps\nTriceps Pushdowns (Cable) – 4 sets x 10-15 reps\nOverhead Triceps Extension – 3 sets x 10-12 reps",
+        "dateCreated": 1735976024000,
+        "time": 2100000,
+        "status": "active",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1736272822000,
+            "end": 1736274922000,
+            "time": 2100000
+          }
+        ]
+      },
+      {
+        "id": "2dbb172e-4c4c-450d-9171-90a83fd4e0b5",
+        "projectId": "2f62bbcf-da6c-406b-9e7e-3b296c15df43",
+        "name": "Wednesday: Back & Biceps",
+        "description": "Pull-Ups or Lat Pulldowns – 4 sets x 6-12 reps\nBarbell Rows – 3 sets x 8-12 reps\nDumbbell Rows – 3 sets x 10-12 reps\nFace Pulls – 3 sets x 12-15 reps\nBarbell Curls – 4 sets x 8-12 reps\nHammer Curls – 3 sets x 10-12 reps",
+        "dateCreated": 1735976707000,
+        "time": 2100000,
+        "status": "active",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1736359216000,
+            "end": 1736361316000,
+            "time": 2100000
+          }
+        ]
+      },
+      {
+        "id": "eee1ce3d-10fb-4503-91bd-5d21f214de78",
+        "projectId": "2f62bbcf-da6c-406b-9e7e-3b296c15df43",
+        "name": "Thursday: Rest or Active Recovery",
+        "description": "Light cardio (30-45 minutes)\nMobility work (Yoga, Stretching)\nFoam rolling",
+        "dateCreated": 1735977358000,
+        "time": 2430000,
+        "status": "active",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1736445607000,
+            "end": 1736448037000,
+            "time": 2430000
+          }
+        ]
+      },
+      {
+        "id": "9eeb879a-6615-4bff-b748-1909d5e40e23",
+        "projectId": "2f62bbcf-da6c-406b-9e7e-3b296c15df43",
+        "name": "Friday: Shoulders & Abs",
+        "description": "Overhead Press (Barbell or Dumbbell) – 4 sets x 8-12 reps\nLateral Raises – 3 sets x 12-15 reps\nFront Raises – 3 sets x 12-15 reps\nFace Pulls – 3 sets x 12-15 reps\nPlank – 3 sets of 1-minute holds\nHanging Leg Raises – 4 sets x 10-15 reps\nBicycle Crunches – 3 sets x 20-30 reps",
+        "dateCreated": 1735978100000,
+        "time": 2415000,
+        "status": "active",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1736532055000,
+            "end": 1736534470000,
+            "time": 2415000
+          }
+        ]
+      },
+      {
+        "id": "7ead21cf-0f79-46e9-a4f8-a1bdaa076b7f",
+        "projectId": "2f62bbcf-da6c-406b-9e7e-3b296c15df43",
+        "name": "Saturday: Full Body Circuit (Optional)",
+        "description": "Squats – 3 sets x 12 reps\nPush-Ups – 3 sets x 15-20 reps\nPull-Ups – 3 sets x 8-12 reps\nDeadlifts – 3 sets x 8 reps\nRussian Twists – 3 sets x 20 reps per side\nMountain Climbers – 3 sets of 30 seconds",
+        "dateCreated": 1735978607000,
+        "time": 4060000,
+        "status": "active",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1736013617000,
+            "end": 1736015507000,
+            "time": 1890000
+          },
+          {
+            "start": 1736618442000,
+            "end": 1736620612000,
+            "time": 2170000
+          }
+        ]
+      },
+      {
+        "id": "e15e10cb-8613-453c-8d61-198f7828d9a2",
+        "projectId": "2f62bbcf-da6c-406b-9e7e-3b296c15df43",
+        "name": "Sunday: Rest or Light Activity",
+        "description": "Light cardio (30-45 minutes)\nMobility work (Yoga, Stretching)\nFoam rolling",
+        "dateCreated": 1735979195000,
+        "time": 2248000,
+        "status": "active",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1736100006000,
+            "end": 1736102254000,
+            "time": 2248000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "800a37d8-e253-4504-a31c-bda163a58bd7",
+    "name": "Learn new language",
+    "description": "Learn new language with Duolingo",
+    "dateCreated": 1736613802000,
+    "status": "active",
+    "priority": "low",
+    "tasks": [
+      {
+        "projectId": "800a37d8-e253-4504-a31c-bda163a58bd7",
+        "name": "Learning basics",
+        "description": "Learning basics of German language with Duo Lingo",
+        "id": "6875af57-2b9d-4af1-904a-ce05d97bb0d2",
+        "dateCreated": 1747689442001,
+        "time": 5136000,
+        "status": "active",
+        "priority": "low",
+        "trackLogs": [
+          {
+            "start": 1747689445993,
+            "end": 1747694585142,
+            "time": 5136000
+          }
+        ],
+        "dateModified": 1748348070071
+      }
+    ]
+  }
+]
