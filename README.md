@@ -1,6 +1,6 @@
 # EasyTrack
 
-**EasyTrack** is a lightweight time and project management web app built with React, styled-components, and Redux. It runs entirely in the browser and stores all data using `localStorage`.
+**EasyTrack** is a lightweight time and project management desktop web app built with React, styled-components, and Redux. It runs entirely in the browser and stores all data using `localStorage`.
 
 ---
 
@@ -98,6 +98,8 @@ To transfer data between browsers or devices, you can:
 - **Import** it back into the app later
 
 > Import/Export buttons are located at the bottom of the sidebar.
+
+The test data file EasyTrackTestData.json is included in the root of the repository to provide a quick preview of the app’s data display. (download and import)
 
 ---
 
