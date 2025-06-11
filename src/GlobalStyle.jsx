@@ -244,6 +244,9 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 2rem;
     box-shadow: ${shadows.shadowSmall};
 
+    &.neutral {
+      background-color: ${colors.blue3 + opacity[25]}
+    }
     &.low {
       background-color: ${colors.valid + opacity[25]}
     }

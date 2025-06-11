@@ -13,6 +13,7 @@ import TaskDetails from './Task/TaskDetails';
 import Confirmation from './Confirmation';
 import TimelineSettings from './Dashboard/Timeline/TimelineSettings';
 import AddEditForm from './Project/AddEditForm';
+import ActivityHistory from './Dashboard/ActivityHistory';
 
 const Backdrop = styled.div`
   position: fixed;
@@ -36,6 +37,13 @@ const StyledModal = styled.div`
   max-height: 90%;
   margin: auto;
   background-clip: padding-box;
+
+  &.history {
+    height: calc(100% - 3.2rem);
+    width: calc(100% - 3.2rem);
+    max-width: unset;
+    max-height: unset;
+  }
 `;
 
 function Modal() {
@@ -76,10 +84,10 @@ function Modal() {
     modalContent = <TaskDetails onClose={handleModalClose} />;
   } else if (formType === 'timeline-settings') {
     modalContent = <TimelineSettings onClose={handleModalClose} />;
+  } else if (formType === 'activity-details') {
+    modalContent = <ActivityHistory onClose={handleModalClose} />;
   } else if (formType === 'confirmation') {
-    modalContent = (
-      <Confirmation type={confirmationType} onClose={handleModalClose} />
-    );
+    modalContent = <Confirmation type={confirmationType} onClose={handleModalClose} />;
   }
 
   const isOpen = formType !== null;
@@ -101,7 +109,7 @@ function Modal() {
     <>
       <Backdrop onClick={handleModalClose} />
       <StyledModal
-        className="box fixed"
+        className={`box fixed ${formType === 'activity-details' ? 'history' : ''}`}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseOut}
         role="dialog"

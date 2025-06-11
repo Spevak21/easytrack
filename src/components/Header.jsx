@@ -114,6 +114,11 @@ const StyledHeader = styled.header`
         z-index: 1;
       }
 
+      &.inactive {
+        opacity: 0.15;
+        pointer-events: none;
+      }
+
       img {
         filter: drop-shadow(${shadows.shadowSmall});
       }
@@ -244,15 +249,13 @@ function Header() {
       )}
       <nav>
         <ul>
-          {projects.length > 0 && (
-            <li
-              className={page === 'dashboard' ? 'active' : ''}
-              onClick={() => handleChangePage('dashboard')}
-            >
-              <img src={house} alt="House icon" />
-              {!isMinimized && 'Dashboard'}
-            </li>
-          )}
+          <li
+            className={`${page === 'dashboard' ? 'active' : ''} ${projects.length ? '' : 'inactive'}`}
+            onClick={() => handleChangePage('dashboard')}
+          >
+            <img src={house} alt="House icon" />
+            {!isMinimized && 'Dashboard'}
+          </li>
           <li
             className={page === 'projects' ? 'active' : ''}
             onClick={() => handleChangePage('projects')}
@@ -260,24 +263,20 @@ function Header() {
             <img src={folder} alt="Folder icon" />
             {!isMinimized && 'Projects'}
           </li>
-          {trackers.length > 0 && (
-            <li
-              className={page === 'trackers' ? 'active' : ''}
-              onClick={() => handleChangePage('trackers')}
-            >
-              <img src={import.meta.env.BASE_URL + 'stopwatch.svg'} alt="Stopwatch icon" />
-              {!isMinimized && 'Trackers'}
-            </li>
-          )}
-          {projects.filter((project) => project.status !== 'active').length > 0 && (
-            <li
-              className={page === 'archive' ? 'active' : ''}
-              onClick={() => handleChangePage('archive')}
-            >
-              <img src={archive} alt="Archive icon" />
-              {!isMinimized && 'Archive'}
-            </li>
-          )}
+          <li
+            className={`${page === 'trackers' ? 'active' : ''} ${trackers.length ? '' : 'inactive'}`}
+            onClick={() => handleChangePage('trackers')}
+          >
+            <img src={import.meta.env.BASE_URL + 'stopwatch.svg'} alt="Stopwatch icon" />
+            {!isMinimized && 'Trackers'}
+          </li>
+          <li
+            className={`${page === 'archive' ? 'active' : ''} ${projects.filter((project) => project.status !== 'active').length ? '' : 'inactive'}`}
+            onClick={() => handleChangePage('archive')}
+          >
+            <img src={archive} alt="Archive icon" />
+            {!isMinimized && 'Archive'}
+          </li>
         </ul>
       </nav>
       <div className="nav-footer">

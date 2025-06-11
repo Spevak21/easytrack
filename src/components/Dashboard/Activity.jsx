@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { colors, opacity } from '../../util/variables';
 import {
@@ -15,6 +15,7 @@ import {
 
 import Time from '../widgets/Time';
 import Button from '../../UI/Button';
+import { uiActions } from '../../store/ui-slice';
 
 const StyledActivity = styled.div`
   display: flex;
@@ -85,9 +86,14 @@ const StyledActivity = styled.div`
       }
     }
   }
+
+  .history {
+    justify-self: flex-end;
+  }
 `;
 
 function Activity({ className }) {
+  const dispatch = useDispatch();
   const projects = useSelector((state) => state.projects);
   const [timePeriod, setTimePeriod] = useState('day');
 
@@ -171,6 +177,10 @@ function Activity({ className }) {
       setTimePeriod('year');
     }
   };
+
+  const handleActivityHistoryModal = () => {
+    dispatch(uiActions.setFormType('activity-details'));
+  }
 
   return (
     <StyledActivity
@@ -266,6 +276,7 @@ function Activity({ className }) {
           </span>
         </span>
       </div>
+      <Button className="history" onClick={handleActivityHistoryModal}>History</Button>
     </StyledActivity>
   );
 }

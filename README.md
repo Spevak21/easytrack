@@ -15,7 +15,7 @@ When you open the app for the first time, you'll be greeted by a **Welcome scree
 
 ---
 
-## 📁 Core Features
+## Core Features
 
 ### 🗂 Projects
 
@@ -77,6 +77,8 @@ Once at least one project exists, the **Dashboard** page becomes available.
   - Can be **retrieved** unless finished
   - Are **not** moved to the archive
 - Discarded projects and tasks can be **permanently deleted**.
+
+Once at least one project is finished or discarded, the **Archive** page becomes available.
 
 ---
 
