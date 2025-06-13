@@ -187,10 +187,11 @@ function Tracker({ tracker }) {
       <hr />
       <div className="card-body">
         <div className="info">
-          <Time value={tracker.time} addition={animate ? trackedTime : null} />
+          <Time value={tracker.time} addition={animate ? trackedTime : null} title="Task track time" />
           <Time
             value={trackedTime}
             className={`${isTracking ? 'active' : 'paused'} ${animate}`}
+            title="Current track time"
           />
         </div>
         <p className="task-description">{task.description}</p>
@@ -198,11 +199,11 @@ function Tracker({ tracker }) {
       <hr />
       <div className={`button-group ${animate && 'blocked'}`}>
         {isTracking ? (
-          <img src={PauseCircle} alt="Pause icon" onClick={handlePauseTimer} />
+          <img src={PauseCircle} alt="Pause icon" onClick={handlePauseTimer} title="Pause tracking" />
         ) : (
-          <img src={PlayCircle} alt="Play icon" onClick={handleStartTimer} />
+          <img src={PlayCircle} alt="Play icon" onClick={handleStartTimer} title="Continue tracking" />
         )}
-        <img src={StopCircle} alt="Stop icon" onClick={handleStopTimer} />
+        <img src={StopCircle} alt="Stop icon" onClick={handleStopTimer} title="Stop tracking" />
       </div>
     </StyledTracker>
   );

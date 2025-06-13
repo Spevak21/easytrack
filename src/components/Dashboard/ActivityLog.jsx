@@ -32,13 +32,15 @@ const StyledLog = styled.li`
       height: 100%;
       background-color: ${colors.white + opacity[25]};
 
-      ${({first, last}) => {
-        if (first) {
+      ${({$first, $last}) => {
+        if ($first && $last) {
+          return `display: none;`
+        } else if ($first) {
           return `
             top: 50%;
             height: 50%;
           `
-        } else if (last) {
+        } else if ($last) {
           return `
             top: 0;
             height: 50%;
@@ -65,7 +67,7 @@ const StyledLog = styled.li`
         margin-left: auto;
       }
       &.priority-tag {
-        width: 15.3rem;
+        width: 17rem;
         text-align: center;
       }
     }
@@ -79,8 +81,6 @@ const StyledLog = styled.li`
 
 function ActivityLog({ log, projectName, first, last }) {
   const [type, action] = log.action.split('-');
-  console.log(type)
-  console.log(action)
 
   let message = null;
   if (log.action === 'project-created') {
@@ -113,7 +113,7 @@ function ActivityLog({ log, projectName, first, last }) {
   }
 
   return (
-    <StyledLog first={first} last={last}>
+    <StyledLog $first={first} $last={last}>
       <div className='top'>
         <span className={`action priority-tag ${tagType}`}>{log.action}</span>
         {log.time && <Time value={log.time}/>}

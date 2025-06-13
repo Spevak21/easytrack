@@ -60,9 +60,54 @@ Once a task is being tracked, the **Trackers** page becomes available.
 
 ### 📊 Dashboard
 
-Once at least one project exists, the **Dashboard** page becomes available.
+The **Dashboard** becomes available after at least one project is created. It gives a high-level overview of your project and task progress through four widgets:
 
-- Displays visual summaries of your projects and task statistics.
+---
+
+#### 📈 1. Statistics Widget
+
+- Displays general statistics including:
+  - Total number of **projects** and **tasks**
+  - Percentage breakdown of:
+    - **Active / Finished / Discarded Projects**
+    - **Active / Finished / Discarded Tasks**
+
+---
+
+#### 🔄 2. Activity Widget
+
+- Shows activity history such as:
+  - Number of projects/tasks **created**, **finished**, or **discarded**
+  - **Total time tracked** across all tasks in all projects
+- You can filter data by:
+  - **Day**
+  - **Week**
+  - **Month**
+  - **Year**
+- Includes a **History** button to see detailed logs of actions per project and time filter.
+
+---
+
+#### 🗓️ 3. Deadline Widget
+
+- Displays **upcoming or overdue deadlines**
+- You can switch between viewing **project deadlines** or **task deadlines**
+
+---
+
+#### 🕒 4. Timeline Widget
+
+- Weekly timeline view of **task tracking activity**
+- **X-axis:** Time of day (0–24 or a custom range like 8–17)
+- **Y-axis:** Days of the week (Monday to Sunday)
+- Visualizes each `trackLog` as a bar:
+  - Width is proportional to the tracked time relative to the chosen X-axis time range
+  - Clicking on a bar navigates to the associated task details
+- Timeline can be scrolled **forward or backward by weeks** with no limit
+
+---
+
+These dashboard widgets give you insight into both **productivity trends** and **time allocation**, helping you make more informed decisions.
 
 ---
 

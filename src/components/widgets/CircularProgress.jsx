@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { colors, opacity } from '../../util/variables';
 import { formatNumber } from '../../util/helpers';
 
-function CircularProgress({ size, percentage, number, color }) {
+function CircularProgress({ size, percentage, number = 0, color, title }) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -61,6 +61,7 @@ function CircularProgress({ size, percentage, number, color }) {
       xmlns="http://www.w3.org/2000/svg"
       style={{ overflow: 'visible' }}
     >
+      <title>{title}</title>
       <defs>
         <filter id={filterId} x="-50%" y="-50%" width="200%" height="200%">
           <feDropShadow
@@ -127,6 +128,7 @@ CircularProgress.propTypes = {
   percentage: PropTypes.number,
   number: PropTypes.number,
   color: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default CircularProgress;

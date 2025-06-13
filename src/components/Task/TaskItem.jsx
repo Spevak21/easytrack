@@ -222,9 +222,9 @@ function TaskItem({ archived = false, task, index }) {
     >
       <h2>{task.name}</h2>
       <div className="tags">
-        <Time value={task.time} />
+        <Time value={task.time} title="Task track time"/>
         {!archived && (
-          <span className={`priority-tag ${task.priority}`}>
+          <span className={`priority-tag ${task.priority}`} title="Task priority">
             {task.priority}
           </span>
         )}
@@ -238,6 +238,7 @@ function TaskItem({ archived = false, task, index }) {
             <img
               className="icon"
               src={import.meta.env.BASE_URL + 'stopwatch.svg'}
+              title="Go to trackers"
               alt="Stopwatch icon"
               onClick={displayTrackers}
             />
@@ -246,18 +247,21 @@ function TaskItem({ archived = false, task, index }) {
               <img
                 className="icon"
                 src={PlayCircle}
+                title="Start tracking"
                 alt="Play icon"
                 onClick={handleStartTimer}
               />
               <img
                 className="icon"
                 src={CheckCircle}
+                title="Finish task"
                 alt="Check icon"
                 onClick={handleTaskFinishModal}
               />
               <img
                 className="icon"
                 src={Ban}
+                title="Discard task"
                 alt="Discard icon"
                 onClick={handleTaskDiscardModal}
               />
@@ -267,6 +271,7 @@ function TaskItem({ archived = false, task, index }) {
           <img
             className="icon"
             src={Undo}
+            title="Restore task"
             alt="Undo icon"
             onClick={handleTaskRestoreModal}
           />
@@ -275,6 +280,7 @@ function TaskItem({ archived = false, task, index }) {
           <img
             className="icon"
             src={Trash}
+            title="Delete task"
             alt="Trash icon"
             onClick={handleTaskRemoveModal}
           />

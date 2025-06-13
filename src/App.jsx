@@ -12,7 +12,6 @@ import Header from './components/Header';
 import Main from './components/Main';
 
 function App() {
-  // console.log('app rendered')
   const dispatch = useDispatch();
   const page = useSelector((state) => state.ui.page);
   const isMinimized = useSelector((state) => state.ui.minimizedHeader);

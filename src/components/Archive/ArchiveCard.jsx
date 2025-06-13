@@ -254,6 +254,7 @@ function ArchiveCard({ project, isExpanded, onClick }) {
             <img
               className="icon"
               src={Undo}
+              title="Restore project"
               alt="Restore icon"
               onClick={handleProjectRestoreModal}
             />
@@ -261,6 +262,7 @@ function ArchiveCard({ project, isExpanded, onClick }) {
           <img
             className="icon"
             src={Trash}
+            title="Delete project"
             alt="Trash icon"
             onClick={handleProjectRemoveModal}
           />
@@ -297,7 +299,7 @@ function ArchiveCard({ project, isExpanded, onClick }) {
               </span>
             )}
           </div>
-          <Time value={totalTime} />
+          <Time value={totalTime} title="Project track time" />
         </div>
         <p className="project-description">{project.description}</p>
         {isExpanded && project.tasks.length !== 0 && (

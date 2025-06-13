@@ -143,6 +143,7 @@ function TaskDetails({ onClose }) {
               <img
                 className="icon"
                 src={Pencil}
+                title="Edit task"
                 alt="Pencil icon"
                 onClick={handleTaskEditModal}
               />
@@ -150,6 +151,7 @@ function TaskDetails({ onClose }) {
                 <img
                   className="icon"
                   src={import.meta.env.BASE_URL + 'stopwatch.svg'}
+                  title="Go to trackers"
                   alt="Stopwatch icon"
                   onClick={displayTrackers}
                 />
@@ -158,12 +160,14 @@ function TaskDetails({ onClose }) {
                   <img
                     className="icon"
                     src={CheckCircle}
+                    title="Finish task"
                     alt="Check icon"
                     onClick={handleTaskFinishModal}
                   />
                   <img
                     className="icon"
                     src={Ban}
+                    title="Discard task"
                     alt="Discard icon"
                     onClick={handleTaskDiscardModal}
                   />
@@ -176,6 +180,7 @@ function TaskDetails({ onClose }) {
               <img
                 className="icon"
                 src={Undo}
+                title="Restore task"
                 alt="Undo icon"
                 onClick={handleTaskRestoreModal}
               />
@@ -187,6 +192,7 @@ function TaskDetails({ onClose }) {
               <img
                 className="icon"
                 src={Trash}
+                title="Delete task"
                 alt="Trash icon"
                 onClick={handleTaskRemoveModal}
               />
@@ -233,9 +239,9 @@ function TaskDetails({ onClose }) {
             )}
           </div>
           <div className="tags">
-            <Time value={tempData.time} />
+            <Time value={tempData.time} title="Task track time" />
             {!isArchived && (
-              <span className={`priority-tag ${tempData.priority}`}>
+              <span className={`priority-tag ${tempData.priority}`} title="Task priority" >
                 {tempData.priority}
               </span>
             )}

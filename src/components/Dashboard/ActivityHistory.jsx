@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { useSelector } from 'react-redux';
 
-import { getCurrentTimestamp, getTimestamps } from '../../util/helpers';
+import { formatTimer, getCurrentTimestamp, getTimestamps } from '../../util/helpers';
 import Button from '../../UI/Button';
 import ActivityLog from './ActivityLog';
 import { colors, opacity } from '../../util/variables';
 import List from '../../UI/List';
+import Time from '../widgets/Time';
 
 const StyledActivityHistory = styled.div`
   display: flex;
@@ -60,26 +62,45 @@ const StyledActivityHistory = styled.div`
       }
 
       .logs {
-        & > li:nth-of-type(odd) {
-          background-color: ${colors.white + opacity[3]};
-        }
-        & > li:nth-of-type(even) {
-          background-color: ${colors.white + opacity[5]};
-        }
-        & > li:first-of-type {
-          border-top-left-radius: 0.8rem;
-          border-top-right-radius: 0.8rem;
-        }
-        & > li:last-of-type {
-          border-bottom-left-radius: 0.8rem;
-          border-bottom-right-radius: 0.8rem;
+        li {
+          &.total-time {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: ${colors.blue5 + opacity[75]} !important;
+            font-size: 1.6rem;
+            padding: 1.2rem 1.2rem 1.2rem 2.8rem;
+          }
+
+          &:nth-of-type(odd) {
+            background-color: ${colors.white + opacity[3]};
+          }
+
+          &:nth-of-type(even) {
+            background-color: ${colors.white + opacity[5]};
+          }
+
+          &:first-of-type {
+            border-top-left-radius: 0.8rem;
+            border-top-right-radius: 0.8rem;
+          }
+
+          &:last-of-type {
+            border-bottom-left-radius: 0.8rem;
+            border-bottom-right-radius: 0.8rem;
+          }
         }
       }
-      }
+    }
+
+  }
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
   }
 `;
 
-function ActivityHistory() {
+function ActivityHistory({ onClose }) {
   const projects = useSelector((state) => state.projects);
   const [timePeriod, setTimePeriod] = useState('day');
 
@@ -145,52 +166,98 @@ function ActivityHistory() {
       })
     })
 
-
-
     if (projectData.history.length) {
       projectData.history.sort((a, b) => a.date - b.date);
       affectedProjects.push(projectData);
     }
   });
 
-  console.log(affectedProjects)
-
   return (
     <StyledActivityHistory>
       <div className="header">
         <h2>Activity history</h2>
         <div className="button-group" onClick={handlePeriodChange}>
-          <Button className={timePeriod === 'day' ? 'active' : ''}>D</Button>
-          <Button className={timePeriod === 'week' ? 'active' : ''}>W</Button>
-          <Button className={timePeriod === 'month' ? 'active' : ''}>M</Button>
-          <Button className={timePeriod === 'year' ? 'active' : ''}>Y</Button>
+          <Button className={timePeriod === 'day' ? 'active' : ''} title="Day">
+            D
+          </Button>
+          <Button
+            className={timePeriod === 'week' ? 'active' : ''}
+            title="Week"
+          >
+            W
+          </Button>
+          <Button
+            className={timePeriod === 'month' ? 'active' : ''}
+            title="Month"
+          >
+            M
+          </Button>
+          <Button
+            className={timePeriod === 'year' ? 'active' : ''}
+            title="Year"
+          >
+            Y
+          </Button>
         </div>
       </div>
       <hr />
-      <List>
-        {affectedProjects.map((project) => {
-          return (
-            <div className="history-card" key={project.id}>
-              <h2>{project.name}</h2>
-              <div className="logs">
-                {project.history.map((log, i, array) => {
-                  return (
-                    <ActivityLog
-                      key={project.id + `-${i}`}
-                      log={log}
-                      projectName={project.name}
-                      first={i === 0}
-                      last={i === array.length - 1}
-                    />
-                  );
-                })}
+      <List category={timePeriod}>
+        {affectedProjects.length ? (
+          affectedProjects.map((project) => {
+            let totalTime = 0;
+            if (project.history.some((obj) => Object.hasOwn(obj, 'time'))) {
+              totalTime = project.history.reduce((total, current) => {
+                if (current.time) {
+                  return total + current.time;
+                } else {
+                  return total;
+                }
+              }, 0);
+            }
+
+            return (
+              <div className="history-card" key={project.id}>
+                <h2>{project.name}</h2>
+                <div className="logs">
+                  {project.history.map((log, i, array) => {
+                    return (
+                      <ActivityLog
+                        key={project.id + `-${i}`}
+                        log={log}
+                        projectName={project.name}
+                        first={i === 0}
+                        last={i === array.length - 1}
+                      />
+                    );
+                  })}
+                  {totalTime ? (
+                    <li className="total-time">
+                      <span>Total time tracked:</span>{' '}
+                      <Time value={totalTime} />
+                    </li>
+                  ) : (
+                    ''
+                  )}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        ) : (
+          <p className="warning">No data for the current time period.</p>
+        )}
       </List>
+      <hr />
+      <div className="button-group">
+        <Button type="button" onClick={onClose}>
+          Close
+        </Button>
+      </div>
     </StyledActivityHistory>
-  )
+  );
 }
+
+ActivityHistory.propTypes = {
+  onClose: PropTypes.func,
+};
 
 export default ActivityHistory

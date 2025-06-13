@@ -153,7 +153,7 @@ function DashboardCard({ item, deadline = false, style }) {
     >
       <div className="card-header">
         <h2>{item.name}</h2>
-        {!deadline && <Time value={timeValue} />}
+        {!deadline && <Time value={timeValue} title="Project track time" />}
       </div>
       <hr />
       <div className="card-body">
@@ -172,18 +172,21 @@ function DashboardCard({ item, deadline = false, style }) {
                   percentage={activeTasksPerc}
                   number={activeTasks}
                   color={colors.blue5}
+                  title="Active tasks"
                 />
                 <CircularProgress
                   size={80}
                   percentage={finishedTasksPerc}
                   number={finishedTasks}
                   color={colors.validDark}
+                  title="Finished tasks"
                 />
                 <CircularProgress
                   size={80}
                   percentage={discardedTasksPerc}
                   number={discardedTasks}
                   color={colors.invalidDark}
+                  title="Discarded tasks"
                 />
               </div>
             </div>
@@ -195,6 +198,7 @@ function DashboardCard({ item, deadline = false, style }) {
                   size={80}
                   percentage={progressPerc}
                   color={colors.white + opacity[80]}
+                  title="Total progress (discarded excluded)"
                 />
               </div>
             </div>

@@ -343,12 +343,14 @@ function ProjectCard({ project, isExpanded, onClick }) {
           <img
             className="icon"
             src={Pencil}
+            title="Edit project"
             alt="Pencil icon"
             onClick={handleProjectEditModal}
           />
           <img
             className="icon"
             src={FilePlus}
+            title="Add task"
             alt="Add file icon"
             onClick={handleTaskAddModal}
           />
@@ -357,12 +359,14 @@ function ProjectCard({ project, isExpanded, onClick }) {
               <img
                 className="icon"
                 src={CheckCircle}
+                title="Finish project"
                 alt="Check icon"
                 onClick={handleProjectFinishModal}
               />
               <img
                 className="icon"
                 src={Ban}
+                title="Discard project"
                 alt="Discard icon"
                 onClick={handleProjectDiscardModal}
               />
@@ -395,8 +399,8 @@ function ProjectCard({ project, isExpanded, onClick }) {
             )}
           </div>
           <div className="tags">
-            <Time value={totalTime} />
-            <span className={`priority-tag ${project.priority}`}>
+            <Time value={totalTime} title="Project track time" />
+            <span className={`priority-tag ${project.priority}`} title="Project priority">
               {project.priority}
             </span>
           </div>

@@ -191,10 +191,10 @@ function Activity({ className }) {
       <div className="header">
         <h2>Activity</h2>
         <div className="button-group" onClick={handlePeriodChange}>
-          <Button className={timePeriod === 'day' ? 'active' : ''}>D</Button>
-          <Button className={timePeriod === 'week' ? 'active' : ''}>W</Button>
-          <Button className={timePeriod === 'month' ? 'active' : ''}>M</Button>
-          <Button className={timePeriod === 'year' ? 'active' : ''}>Y</Button>
+          <Button className={timePeriod === 'day' ? 'active' : ''} title="Day">D</Button>
+          <Button className={timePeriod === 'week' ? 'active' : ''} title="Week">W</Button>
+          <Button className={timePeriod === 'month' ? 'active' : ''} title="Month">M</Button>
+          <Button className={timePeriod === 'year' ? 'active' : ''} title="Year">Y</Button>
         </div>
       </div>
       <hr />
