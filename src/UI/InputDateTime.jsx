@@ -52,7 +52,7 @@ export default function InputDateTime({ name, value, label, error, onChange, typ
   let min = formatDate(getCurrentTimestamp(), 'yyyy-mm-ddThh:mm:ss');
   let max = '';
 
-  if (!isSafari) {
+  if (isSafari) {
 
     const [datePart, timePart] = value ? value.split('T') : ['', ''];
 
