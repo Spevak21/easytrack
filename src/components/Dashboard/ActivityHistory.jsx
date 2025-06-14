@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { useSelector } from 'react-redux';
 
-import { formatTimer, getCurrentTimestamp, getTimestamps } from '../../util/helpers';
+import { getCurrentTimestamp, getTimestamps } from '../../util/helpers';
 import Button from '../../UI/Button';
 import ActivityLog from './ActivityLog';
 import { colors, opacity } from '../../util/variables';

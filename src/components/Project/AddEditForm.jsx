@@ -166,8 +166,10 @@ function AddEditForm({ onClose }) {
         name="deadline"
         value={dateValue}
         label="Deadline"
-        error={dateInvalid && submitted ? (item === 'task' ? 'The date must not be in the past or later than the project deadline' : 'The date must not be in the past or earlier than the latest task deadline') : ''}
+        error={dateInvalid && submitted ? 'A' : ''}
         onChange={handleDateChange}
+        type={item}
+        limit={limit}
       />
       <InputGroup label="Priority">
         <Select
