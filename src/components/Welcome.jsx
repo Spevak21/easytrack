@@ -180,7 +180,7 @@ function Welcome() {
         </h1>
       </div>
       <p>
-        My personal project management hub—designed to simplify the way you
+        Project management hub—designed to simplify the way you
         organize, track, and achieve your goals. Whether you&apos;re managing
         daily tasks or long-term projects, this tool helps you stay on top of
         your progress, maintain focus, and reach new milestones with ease.

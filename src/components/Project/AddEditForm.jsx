@@ -13,13 +13,14 @@ import { resetModal } from '../../store/data-actions';
 import { uiActions } from '../../store/ui-slice';
 
 import { deepClone, formatDate } from '../../util/helpers';
-import { isDateScopeValid, isNotEmpty } from '../../util/validation';
+import { isDateScopeValid, isEmpty } from '../../util/validation';
 
 import InputGroup from '../../UI/InputGroup';
 import Button from '../../UI/Button';
 import Input from '../../UI/Input';
 import Textarea from '../../UI/Textarea';
 import Select from '../../UI/Select';
+import InputDateTime from '../../UI/InputDateTime';
 
 function AddEditForm({ onClose }) {
   const dispatch = useDispatch();
@@ -55,21 +56,21 @@ function AddEditForm({ onClose }) {
     value: nameValue,
     handleChange: handleNameChange,
     invalid: nameInvalid,
-  } = useInput(type === 'edit' && tempData?.name ? tempData.name : '', (value) => isNotEmpty(value));
+  } = useInput(type === 'edit' && tempData?.name ? tempData.name : '', (value) => !isEmpty(value));
 
   const {
     value: dateValue,
     handleChange: handleDateChange,
     invalid: dateInvalid,
   } = useInput(type === 'edit' && tempData?.deadline ? formatDate(tempData.deadline, 'yyyy-mm-ddThh:mm:ss') : '',
-    (value) => isDateScopeValid(value, item, limit) || !isNotEmpty(value)
+    (value) => isDateScopeValid(value, item, limit) || isEmpty(value)
   );
 
   const {
     value: descriptionValue,
     handleChange: handleDescriptionChange,
     invalid: descriptionInvalid,
-  } = useInput(type === 'edit' && tempData?.description ? tempData.description : '', (value) => isNotEmpty(value));
+  } = useInput(type === 'edit' && tempData?.description ? tempData.description : '', (value) => !isEmpty(value));
 
   const handleFormCancel = (e) => {
     e.target.closest('form').reset();
@@ -91,12 +92,17 @@ function AddEditForm({ onClose }) {
     const data = Object.fromEntries(fd.entries());
     const tempDataClone = deepClone(tempData);
 
-    if (data.deadline) {
+    if (data.deadlineDate && data.deadlineTime) {
+      data.deadline = formatDate(data.deadlineDate + 'T' + data.deadlineTime, 'ms');
+      delete data.deadlineDate;
+      delete data.deadlineTime;
+    } else if (data.deadline) {
       data.deadline = formatDate(data.deadline, 'ms');
     } else {
       if (tempDataClone) delete tempDataClone.deadline;
       delete data.deadline;
     }
+
 
     if (item === 'project') {
       if (type === 'new') {
@@ -156,17 +162,13 @@ function AddEditForm({ onClose }) {
           autoFocus
         />
       </InputGroup>
-      <InputGroup
-        label="Deadline (optional)"
-        error={dateInvalid && submitted ? 'The date must not be in the past or later than the project deadline' : ''}
-      >
-        <Input
-          name="deadline"
-          type="datetime-local"
-          value={dateValue}
-          onChange={handleDateChange}
-        />
-      </InputGroup>
+      <InputDateTime 
+        name="deadline"
+        value={dateValue}
+        label="Deadline"
+        error={dateInvalid && submitted ? (item === 'task' ? 'The date must not be in the past or later than the project deadline' : 'The date must not be in the past or earlier than the latest task deadline') : ''}
+        onChange={handleDateChange}
+      />
       <InputGroup label="Priority">
         <Select
           name="priority"

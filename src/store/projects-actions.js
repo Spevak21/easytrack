@@ -29,11 +29,7 @@ export const initData = () => {
       const closeDeadlinesTasks = data.reduce((acc, project) => {
         if (project.status === 'active') {
           project.tasks.forEach((task) => {
-            if (
-              task.deadline !== undefined &&
-              task.status === 'active' &&
-              (project.deadline - getCurrentTimestamp() < 259200000 || project.deadline < getCurrentTimestamp())
-            ) {
+            if (task.deadline !== undefined && task.status === 'active') {
               acc.push(task);
             }
           });

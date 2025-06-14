@@ -283,3 +283,8 @@ export const sortByPriority = (array) => {
     (a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]
   );
 };
+
+export const isSafariBrowser = () => {
+  const ua = navigator.userAgent;
+  return /^((?!chrome|android).)*safari/i.test(ua);
+}

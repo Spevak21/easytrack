@@ -18,7 +18,7 @@ function InputGroup({ id, label, error, children }) {
   const ID = id ? id : fallbackId;
 
   const child = cloneElement(children, {
-    id,
+    id: ID,
     className: error ? 'invalid' : '',
   });
 

@@ -35,7 +35,7 @@ function App() {
   }, [projects, dispatch]);
 
   useEffect(() => {
-    const handleUnload = () => {
+    const handlePageHide = () => {
       trackers.forEach((tracker) => {
         let trackedTime;
 
@@ -57,10 +57,10 @@ function App() {
       });
     };
 
-    window.addEventListener('unload', handleUnload);
+    window.addEventListener('pagehide', handlePageHide);
 
     return () => {
-      window.removeEventListener('unload', handleUnload);
+      window.removeEventListener('pagehide', handlePageHide);
     };
   }, [trackers, dispatch]);
 

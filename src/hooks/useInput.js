@@ -6,7 +6,11 @@ export function useInput(defaultValue, validation) {
   const isValid = validation(value);
 
   const handleChange = (e) => {
-    setValue(e.target.value);
+    if (e.target) {
+      setValue(e.target.value);
+    } else {
+      setValue(e)
+    }
   };
 
   return {

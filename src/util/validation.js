@@ -1,7 +1,7 @@
 import { getCurrentTimestamp } from './helpers';
 
-export const isNotEmpty = (value) => {
-  return value.trim() !== '';
+export const isEmpty = (value) => {
+  return value.trim() === '';
 };
 
 export const isDateScopeValid = (value, item, limit = null) => {

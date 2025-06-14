@@ -55,7 +55,27 @@ const StyledInput = styled.input`
       background-repeat: no-repeat;
       pointer-events: none;
     }
+  }
 
+  &[type='time'] {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0.8rem;
+      height: 1.6rem;
+      width: 1.6rem;
+      transform: translateY(50%);
+      background-image: url(${import.meta.env.BASE_URL + 'clock.svg'}); 
+      background-size: contain;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+  }
+
+  &[type='date'],
+  &[type='datetime-local'],
+  &[type='time'] {
     &::-webkit-calendar-picker-indicator {
       opacity: 0;
     }
@@ -63,8 +83,7 @@ const StyledInput = styled.input`
 `;
 
 function Input(props) {
-  
-  return <StyledInput {...props} $validValue={props.type === "datetime-local" && props.value} />;
+  return <StyledInput {...props} $validValue={props.value} />;
 }
 
 Input.propTypes = {

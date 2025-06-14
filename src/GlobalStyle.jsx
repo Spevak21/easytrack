@@ -307,6 +307,11 @@ const GlobalStyle = createGlobalStyle`
     from {box-shadow: 0 0 0 0 ${colors.highlightBlue + opacity[25]}}
     to {box-shadow: 0 0 0 1.2rem ${colors.highlightBlue + opacity[0]}}
   }
+  @keyframes pulseLight {
+    0% {box-shadow: ${shadows.outerGlowHover}}
+    50% {box-shadow: ${shadows.outerGlowActive}}
+    100% {box-shadow: ${shadows.outerGlowHover}}
+  }
 
   @keyframes grow {
     0% {transform: scale(1);}

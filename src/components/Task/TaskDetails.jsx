@@ -6,7 +6,7 @@ import { uiActions } from '../../store/ui-slice';
 import { resetModal, startTracking } from '../../store/data-actions';
 
 import { colors, opacity } from '../../util/variables';
-import { formatDate } from '../../util/helpers';
+import { formatDate, getCurrentTimestamp } from '../../util/helpers';
 
 import Pencil from '../../assets/pencil.svg';
 import CheckCircle from '../../assets/check-circle.svg';
@@ -58,6 +58,13 @@ const StyledDetails = styled.div`
           margin-bottom: 0;
           line-height: 1.6rem;
           font-size: 1.4rem;
+
+          &.yellow {
+            color: ${colors.warning};
+          }
+          &.red {
+            color: ${colors.invalid};
+          }
         }
       }
 
@@ -132,6 +139,14 @@ function TaskDetails({ onClose }) {
     dispatch(uiActions.changePage('trackers'));
     dispatch(resetModal());
   };
+
+  let deadlineStyle = '';
+  if (tempData.deadline - getCurrentTimestamp() < 259200000) {
+    deadlineStyle = 'yellow';
+  }
+  if (tempData.deadline < getCurrentTimestamp()) {
+    deadlineStyle = 'red';
+  }
 
   return (
     <StyledDetails className="form">
@@ -231,7 +246,7 @@ function TaskDetails({ onClose }) {
               </span>
             )}
             {tempData.deadline && (
-              <span>
+              <span className={deadlineStyle}>
                 <label>Deadline: </label>
                 {formatDate(tempData.deadline, 'dd.mm.yyyy.')}
                 <br />( {formatDate(tempData.deadline, 'hh:mm:ss')} )
