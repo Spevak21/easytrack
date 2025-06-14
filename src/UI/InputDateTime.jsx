@@ -50,9 +50,9 @@ export default function InputDateTime({ name, value, label, error, onChange, typ
   };
 
   let min = formatDate(getCurrentTimestamp(), 'yyyy-mm-ddThh:mm:ss');
-  let max = '';
+  // let max = '';
 
-  if (isSafari) {
+  // if (!isSafari) {
 
     const [datePart, timePart] = value ? value.split('T') : ['', ''];
 
@@ -80,6 +80,11 @@ export default function InputDateTime({ name, value, label, error, onChange, typ
       errorMsg = `Value must be between: ${minFormated} ${minTime} - ${maxFormated} ${maxTime}`;
     }
 
+    // console.log(minDate)
+    // console.log(minTime)
+    // console.log(maxDate)
+    // console.log(maxTime)
+
     return (
       <StyledInput>
         {error && <label>{errorMsg}</label>}
@@ -105,28 +110,31 @@ export default function InputDateTime({ name, value, label, error, onChange, typ
         </div>
       </StyledInput>
     );
-  }
+  // }
 
-  if (type === 'project' && limit) {
-    min = formatDate(limit, 'yyyy-mm-ddThh:mm:ss');
-  } else if (type === 'task' && limit) {
-    max = formatDate(limit, 'yyyy-mm-ddThh:mm:ss');
-  }
+  // if (type === 'project' && limit) {
+  //   min = formatDate(limit, 'yyyy-mm-ddThh:mm:ss');
+  // } else if (type === 'task' && limit) {
+  //   max = formatDate(limit, 'yyyy-mm-ddThh:mm:ss');
+  // }
 
-  return (
-    <StyledInput>
-      <InputGroup label={label} error={error}>
-        <Input
-          name={name}
-          type="datetime-local"
-          value={value}
-          onChange={onChange}
-          min={min}
-          max={max}
-        />
-      </InputGroup>
-    </StyledInput>
-  );
+  // console.log(min)
+  // console.log(max)
+
+  // return (
+  //   <StyledInput>
+  //     <InputGroup label={label} error={error}>
+  //       <Input
+  //         name={name}
+  //         type="datetime-local"
+  //         value={value}
+  //         onChange={onChange}
+  //         min={min}
+  //         max={max}
+  //       />
+  //     </InputGroup>
+  //   </StyledInput>
+  // );
 }
 
 InputDateTime.propTypes = {
