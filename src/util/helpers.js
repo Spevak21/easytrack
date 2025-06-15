@@ -284,6 +284,11 @@ export const sortByPriority = (array) => {
   );
 };
 
+export const convertDate = (date) => {
+  let segments = date.split('-');
+  return `${segments[1]}/${segments[2]}/${segments[0]}`;
+}
+
 export const isSafariBrowser = () => {
   const ua = navigator.userAgent;
   return /^((?!chrome|android).)*safari/i.test(ua);

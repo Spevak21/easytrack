@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { formatDate, getCurrentTimestamp, isSafariBrowser } from "../util/helpers";
+import { convertDate, formatDate, getCurrentTimestamp, isSafariBrowser } from "../util/helpers";
 import { colors } from "../util/variables";
 
 import InputGroup from "./InputGroup";
@@ -50,40 +50,33 @@ export default function InputDateTime({ name, value, label, error, onChange, typ
   };
 
   let min = formatDate(getCurrentTimestamp(), 'yyyy-mm-ddThh:mm:ss');
-  // let max = '';
+  let max = '';
 
-  // if (!isSafari) {
-
+  if (isSafari) {
     const [datePart, timePart] = value ? value.split('T') : ['', ''];
 
     let [minDate, minTime] = min.split('T');
     let maxDate, maxTime, errorMsg;
 
     if (type === 'project' && limit) {
+      // limit here is latest task deadline as min limit
       minDate = formatDate(limit, 'yyyy-mm-dd');
       minTime = formatDate(limit, 'hh:mm:ss');
 
-      let minDateSegments = minDate.split('-');
-      let minFormated = `${minDateSegments[1]}/${minDateSegments[2]}/${minDateSegments[0]}`;
-      errorMsg = `Value must be ${minFormated} ${minTime} or later`;
-    }
-
-    if (type === 'task' && limit) {
+      let lowDate = convertDate(minDate);
+      errorMsg = `Value must be ${lowDate} ${minTime} or later 1`;
+    } else if (type === 'task' && limit) {
+      // limit here is projects deadline as max limit
       maxDate = formatDate(limit, 'yyyy-mm-dd');
       maxTime = formatDate(limit, 'hh:mm:ss');
 
-      let maxDateSegments = maxDate.split('-');
-      let maxFormated = `${maxDateSegments[1]}/${maxDateSegments[2]}/${maxDateSegments[0]}`;
-      let minDateSegments = minDate.split('-');
-      let minFormated = `${minDateSegments[1]}/${minDateSegments[2]}/${minDateSegments[0]}`;
-      
-      errorMsg = `Value must be between: ${minFormated} ${minTime} - ${maxFormated} ${maxTime}`;
+      let highDate = convertDate(maxDate);
+      let lowDate = convertDate(minDate);
+      errorMsg = `Value must be between: ${lowDate} ${minTime} - ${highDate} ${maxTime} 2`;
+    } else {
+      let lowDate = convertDate(minDate)
+      errorMsg = `Value must be ${lowDate} ${minTime} or later 3`;
     }
-
-    // console.log(minDate)
-    // console.log(minTime)
-    // console.log(maxDate)
-    // console.log(maxTime)
 
     return (
       <StyledInput>
@@ -110,31 +103,29 @@ export default function InputDateTime({ name, value, label, error, onChange, typ
         </div>
       </StyledInput>
     );
-  // }
+  }
 
-  // if (type === 'project' && limit) {
-  //   min = formatDate(limit, 'yyyy-mm-ddThh:mm:ss');
-  // } else if (type === 'task' && limit) {
-  //   max = formatDate(limit, 'yyyy-mm-ddThh:mm:ss');
-  // }
+  if (type === 'project' && limit) {
+    min = formatDate(limit, 'yyyy-mm-ddThh:mm:ss');
+  } else if (type === 'task' && limit) {
+    max = formatDate(limit, 'yyyy-mm-ddThh:mm:ss');
+  }
 
-  // console.log(min)
-  // console.log(max)
-
-  // return (
-  //   <StyledInput>
-  //     <InputGroup label={label} error={error}>
-  //       <Input
-  //         name={name}
-  //         type="datetime-local"
-  //         value={value}
-  //         onChange={onChange}
-  //         min={min}
-  //         max={max}
-  //       />
-  //     </InputGroup>
-  //   </StyledInput>
-  // );
+  return (
+    <StyledInput>
+      <InputGroup label={label} error={error}>
+        <Input
+          name={name}
+          type="datetime-local"
+          value={value}
+          onChange={onChange}
+          min={min}
+          max={max}
+          step="1"
+        />
+      </InputGroup>
+    </StyledInput>
+  );
 }
 
 InputDateTime.propTypes = {
